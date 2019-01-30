@@ -1,0 +1,9 @@
+.menu-principal {
+  border-bottom: solid 1px #eee; height: 3rem; display: flex; align-items: center;
+}
+.menu-principal a {
+  margin: 1rem; text-decoration: none; color: #333;
+}
+.menu-principal a:not([href=""]):hover {
+  color: royalblue;
+}
