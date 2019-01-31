@@ -1,6 +1,25 @@
-<div class="menu-principal">
-  <a href="">Angular Udemy</a>
-  <a routerLink="home">Início</a>
-  <a routerLink="usuario">Usuário</a>
-  <a routerLink="estados">Estados</a>
-</div>
+<p-menubar styleClass="menu-principal" [model]="items">
+    <img id="logo" routerLink="home" src="assets/img/asind-logo-branco.svg"/>
+    <button pButton type="button" (click)="exibirLogin()" pButton icon="pi pi-lock" label="Entrar"></button>
+</p-menubar>
+
+<p-dialog header="Entrar"
+  [(visible)]="display" [modal]="true" [responsive]="true"
+  [style]="{width: '450px', minWidth: '200px'}" [minY]="70"
+  [maximizable]="false" [baseZIndex]="10000">
+    <div class="form-login-content">
+      <form>
+        <br>
+          <i class="fa fa-user"></i>
+        <br>
+        <label for="usuario">Usuário</label>
+        <input id="usuario" type="text" pInputText><br><br>
+        <label for="senha">Senha</label>
+        <input id="senha" type="password" pInputText><br>
+      </form>
+    </div>
+    <p-footer>
+      <button type="button" pButton icon="pi pi-check" (click)="display=false" label="Salvar"></button>
+      <button type="button" pButton icon="pi pi-times" (click)="display=false" label="Cancelar" class="ui-button-secondary"></button>
+    </p-footer>
+</p-dialog>

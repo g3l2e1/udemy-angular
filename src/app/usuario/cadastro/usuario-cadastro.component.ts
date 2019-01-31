@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/usuario';
+import { UsuarioService } from 'src/app/usuario.service';
 
 @Component({
   selector: 'app-usuario-cadastro',
@@ -10,7 +11,7 @@ export class UsuarioCadastroComponent implements OnInit {
 
   public usuario:Usuario = new Usuario();
 
-  constructor() {
+  constructor(private usuarioService:UsuarioService) {
 
   }
 
@@ -18,7 +19,14 @@ export class UsuarioCadastroComponent implements OnInit {
   }
 
   public salvar(){
-    console.log(this.usuario);
-    alert("Salvo com sucesso!!!");
+    this.usuarioService.salvar(this.usuario).subscribe(
+      response => {
+        alert("Salvo com sucesso!!!");
+      },
+      error => {
+        error("Não foi possível comunicar com o servidor!!!");
+      }
+    );
+
   }
 }

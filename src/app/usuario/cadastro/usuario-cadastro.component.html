@@ -1,7 +1,7 @@
 <form>
   <label>Nome:</label>
-  <input type="text" name="nome" [(ngModel)]="usuario.nome"/><br>
+  <input pInputText  type="text" name="nome" [(ngModel)]="usuario.nome"/><br>
   <label>Email:</label>
-  <input type="email" name="email" [(ngModel)]="usuario.email"/><br>
-  <button (click)="salvar()">Salvar</button>
+  <input pInputText  type="email" name="email" [(ngModel)]="usuario.email"/><br>
+  <button pButton (click)="salvar()" label="Salvar"></button>
 </form>

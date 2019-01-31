@@ -11,12 +11,19 @@ export class UsuarioComponent implements OnInit {
 
   public usuarios:Usuario[];
 
-  constructor(private usuarioService:UsuarioService) { 
+  constructor(private usuarioService:UsuarioService) {
 
   }
 
   ngOnInit() {
-    this.usuarios = this.usuarioService.listaUsuario();
+    this.usuarioService.listaUsuario().subscribe(
+      response => {
+        this.usuarios = response
+      },
+      error => {
+        alert("Houve erro ao carregar a lista");
+      }
+    )
   }
 
 }

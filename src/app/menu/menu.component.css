@@ -1,9 +1,25 @@
-.menu-principal {
-  border-bottom: solid 1px #eee; height: 3rem; display: flex; align-items: center;
+:host ::ng-deep .ui-menubar {
+  padding: 0.5rem !important; border-radius: 0px;
 }
-.menu-principal a {
-  margin: 1rem; text-decoration: none; color: #333;
+
+:host ::ng-deep .ui-menubar-root-list {
+  margin-left: 3rem;
 }
-.menu-principal a:not([href=""]):hover {
-  color: royalblue;
+
+:host ::ng-deep .ui-menubar li {
+  margin-right: 0.5rem;
+}
+
+#logo {
+  position: absolute; top: 0.9rem; left: 0.6rem; height: 25px;
+}
+
+.form-login-content {
+  padding-bottom: 1rem;
+}
+:host ::ng-deep .ui-inputtext {
+  width: 100% !important; padding: 0.7rem;
+}
+:host ::ng-deep .ui-dialog .ui-dialog-titlebar {
+  border: 1px solid royalblue; background-color: royalblue;
 }

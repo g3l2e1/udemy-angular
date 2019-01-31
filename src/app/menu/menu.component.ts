@@ -1,23 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { MenuItem } from 'primeng/components/common/menuitem';
 
 @Component({
   selector: 'menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
+  //encapsulation: ViewEncapsulation.None
 })
 export class MenuComponent implements OnInit {
 
-  public texto:string;
+  items:MenuItem[];
+  display: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
-    this.texto = "Olá mundo";
+    this.items = [
+      {
+        label: 'Usuário',
+        items: [
+          {label: 'Listar', routerLink: 'usuario'},
+          {label: 'Cadastro', routerLink: 'usuario/add'}
+        ]
+      },
+      {
+        label: 'Estados',
+        routerLink: 'estados'
+      }
+    ];
   }
 
-  clicou(){
-    this.texto = "Clicou?";
+  exibirLogin() {
+    this.display = true;
   }
-
 
 }
