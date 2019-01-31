@@ -1,5 +1,14 @@
-<div class="login">
-  Usuario: <input type="text" name="user" value="{{usuario.nome}}"/>
-  Senha: <input type="password" name="password"/>
-</div>
-
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of usuarios;">
+      <td>{{usuario.nome}}</td>
+      <td>{{usuario.email}}</td>
+    </tr>
+  </tbody>
+</table>
