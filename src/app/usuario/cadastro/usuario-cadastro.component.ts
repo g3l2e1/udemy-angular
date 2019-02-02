@@ -24,7 +24,7 @@ export class UsuarioCadastroComponent implements OnInit {
         alert("Salvo com sucesso!!!");
       },
       error => {
-        error("Não foi possível comunicar com o servidor!!!");
+        alert("Não foi possível comunicar com o servidor!!!");
       }
     );
 

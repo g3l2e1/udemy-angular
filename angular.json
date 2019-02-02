@@ -55,6 +55,14 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "desenv": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.prod.ts",
+                  "with": "src/environments/environment.desenv.ts"
+                }
+              ]
             }
           }
         },
@@ -66,6 +74,9 @@
           "configurations": {
             "production": {
               "browserTarget": "udemy-angular:build:production"
+            },
+            "desenv": {
+              "browserTarget": "udemy-angular:build:desenv"
             }
           }
         },

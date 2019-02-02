@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { Usuario } from './usuario';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  private url = 'http://localhost:8080/usuario';
+  private url = environment.host+'usuario';
 
   constructor(private http:HttpClient) { }
 
@@ -20,6 +21,7 @@ export class UsuarioService {
   }
 
   public salvar(usuario:Usuario):Observable<Usuario>{
+    console.log(this.url);
     return this.http.post<Usuario>(this.url, usuario);
   }
 
